@@ -1,13 +1,14 @@
-import { useGLTF } from '@react-three/drei'
 import { RigidBody } from '@react-three/rapier'
-import { MeshBasicMaterial } from 'three'
+import { Intro } from '.'
+
 const Floor = () => {
   return (
     <>
-      <RigidBody type='fixed' position={[0, -0.1, 0]} rotation-x={-Math.PI / 2}>
+      <RigidBody type='fixed' position={[0, -0.1, 0]} >
         <mesh visible={false}>
           <planeGeometry args={[500, 500]} />
         </mesh>
+        <Intro />
       </RigidBody>
     </>
   )

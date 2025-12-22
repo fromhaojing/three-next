@@ -12,7 +12,6 @@ export default function Page() {
     <>
       <Leva hidden={!isDebug} />
       <View className='h-full w-full' orbit>
-
         <InfiniteOllision />
       </View>
     </>

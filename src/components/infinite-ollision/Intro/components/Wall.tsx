@@ -1,7 +1,7 @@
 import { useGLTF, useTexture } from '@react-three/drei'
 import { useMemo, useRef, useEffect } from 'react'
 import * as THREE from 'three'
-import { Vec3 } from './type'
+import { Vec3 } from '../../type'
 
 type WallProps = {
   rowCounts: number[]

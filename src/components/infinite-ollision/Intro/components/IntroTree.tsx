@@ -1,26 +1,27 @@
 import { useEffect, useRef } from 'react'
-import { Wall } from './'
 import * as THREE from 'three'
 import { useGLTF, useTexture } from '@react-three/drei'
-import { FakeShadow } from './Shader/'
+import { FakeShadow } from '../../Shader'
 
-const Intro = () => {
+const IntroTree = () => {
   const introStaticBase = useGLTF('/models/intro/static/base.glb')
   const introStaticFloorShadow = useTexture('/models/intro/static/floorShadow.png')
   introStaticFloorShadow.colorSpace = THREE.SRGBColorSpace
   const { nodes } = introStaticBase
 
   const matcapWhiteTexture = useTexture('/models/matcaps/white.png')
+  matcapWhiteTexture.colorSpace = THREE.SRGBColorSpace
   const matcapGreenTexture = useTexture('/models/matcaps/green.png')
+  matcapWhiteTexture.colorSpace = THREE.SRGBColorSpace
   const matcapBrownTexture = useTexture('/models/matcaps/brown.png')
+  matcapBrownTexture.colorSpace = THREE.SRGBColorSpace
+
   const matcaps = { white: matcapWhiteTexture, green: matcapGreenTexture, brown: matcapBrownTexture }
 
   const fakeShadowTef = useRef(null)
 
   useEffect(() => {
     if (fakeShadowTef.current) {
-      console.log(fakeShadowTef.current);
-      
       fakeShadowTef.current.uniforms.uTexture.value = introStaticFloorShadow
     }
   }, [])
@@ -34,12 +35,6 @@ const Intro = () => {
             return (
               <mesh key={node.uuid} position={node.position} rotation={node.rotation} scale={node.scale}>
                 <planeGeometry />
-                {/* <meshBasicMaterial
-                  color={0xffffff}
-                  alphaMap={introStaticFloorShadow}
-                  transparent={true}
-                  blending={THREE.MultiplyBlending}
-                /> */}
                 <FakeShadow ref={fakeShadowTef} />
               </mesh>
             )
@@ -62,15 +57,8 @@ const Intro = () => {
           )
         })}
       </group>
-
-      <Wall position={[-12.95, 0, -3.75]} rowCounts={[3, 2]} />
-      <Wall position={[-15, 0, -2]} rotation={[0, Math.PI / 2, 0]} rowCounts={[4, 3]} />
-      <Wall position={[-15, 0, 3]} rotation={[0, Math.PI / 2, 0]} rowCounts={[3, 2]} />
-      <Wall position={[-12, 0, 15]} rotation={[0, Math.PI / 2, 0]} rowCounts={[5, 4]} />
-      <Wall position={[12.95, 0, -3.75]} rowCounts={[2, 1]} />
-      <Wall position={[15, 0, -2]} rotation={[0, Math.PI / 2, 0]} rowCounts={[4, 3]} />
     </>
   )
 }
 
-export default Intro
+export default IntroTree
