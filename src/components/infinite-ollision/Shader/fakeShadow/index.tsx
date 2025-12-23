@@ -22,4 +22,5 @@ const FakeShadow = forwardRef((props, ref) => {
   return <shaderFakeShadow ref={localRef} {...props} attach='material' transparent />
 })
 
+export { ShaderFakeShadow }
 export default FakeShadow

@@ -1,5 +1,5 @@
 'use client'
-import { Floor, FullscreenQuad, Assets } from '.'
+import { Floor, FullscreenQuad, Assets, Intro } from '.'
 import { Physics } from '@react-three/rapier'
 
 const InfiniteOllision = () => {
@@ -12,6 +12,7 @@ const InfiniteOllision = () => {
       <FullscreenQuad />
       <Physics debug>
         <Floor />
+        <Intro />
       </Physics>
     </>
   )
