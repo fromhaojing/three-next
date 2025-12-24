@@ -46,10 +46,7 @@ const TextIntro = () => {
         }
         return (
           <RigidBody key={scene.uuid} position={name.position} colliders={false}>
-            <CuboidCollider
-              args={[size.x / 2, size.y / 2, size.z / 2]}
-              position={[name.position[0] + center.x, name.position[1] + center.y, name.position[2] + center.z]}
-            />
+            <CuboidCollider args={[size.x / 2, size.y / 2, size.z / 2]} position={[center.x, center.y, center.z]} />
             <primitive object={scene} />
           </RigidBody>
         )

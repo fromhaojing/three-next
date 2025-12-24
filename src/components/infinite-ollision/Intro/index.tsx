@@ -1,9 +1,8 @@
-import { Wall, IntroTree, Crossroads, TextIntro } from './components'
+import { Wall, IntroTree, TextIntro } from './components'
 
 const Intro = () => {
   return (
     <>
-      <Crossroads />
       <IntroTree />
       <TextIntro />
       <Wall position={[-12.95, 0, -3.75]} rowCounts={[3, 2]} />

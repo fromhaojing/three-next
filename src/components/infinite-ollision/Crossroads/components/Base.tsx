@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import { useGLTF, useTexture } from '@react-three/drei'
 import { ShaderFakeShadow } from '../../Shader'
 
-const Crossroads = () => {
+const Base = () => {
   const crossroadsStaticBase = useGLTF('/models/crossroads/static/base.glb')
   const floorShadow = useTexture('/models/crossroads/static/floorShadow.png')
   const matcapWhiteTexture = useTexture('/models/matcaps/white.png')
@@ -53,4 +53,4 @@ const Crossroads = () => {
   return <primitive object={crossroadsStaticBase.scene} rotation-x={-Math.PI / 2} position={[0, 0, 35]} />
 }
 
-export default Crossroads
+export default Base
