@@ -44,6 +44,9 @@ importers:
       glsl-random:
         specifier: ^0.0.5
         version: 0.0.5
+      gsap:
+        specifier: ^3.14.2
+        version: 3.14.2
       leva:
         specifier: ^0.10.1
         version: 0.10.1(@types/react@19.2.6)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -105,6 +108,9 @@ importers:
       file-loader:
         specifier: ^6.2.0
         version: 6.2.0(webpack@5.103.0)
+      glsl-blend:
+        specifier: ^1.0.3
+        version: 1.0.3
       glslify:
         specifier: ^7.1.1
         version: 7.1.1
@@ -2166,6 +2172,9 @@ packages:
     resolution: {integrity: sha512-DpLKbNU4WylpxJykQujfCcwYWiV/Jhm50Goo0wrVILAv5jOr9d+H+UR3PhSCD2rCCEIg0uc+G+muBTwD54JhDQ==}
     engines: {node: '>= 0.4'}
 
+  glsl-blend@1.0.3:
+    resolution: {integrity: sha512-P/Tuls3CSTBKR9BJR98Lte3SFphpzWnqQNLH67q3OeH0FMYixl0rMLr0BcNdB0tkS6mCphRy78Y0AwP1IkV/rA==}
+
   glsl-inject-defines@1.0.3:
     resolution: {integrity: sha512-W49jIhuDtF6w+7wCMcClk27a2hq8znvHtlGnrYkSWEr8tHe9eA2dcnohlcAmxLYBSpSSdzOkRdyPTrx9fw49+A==}
 
@@ -2231,6 +2240,9 @@ packages:
 
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
+
+  gsap@3.14.2:
+    resolution: {integrity: sha512-P8/mMxVLU7o4+55+1TCnQrPmgjPKnwkzkXOK1asnR9Jg2lna4tEY5qBJjMmAaOBDDZWtlRjBXjLa0w53G/uBLA==}
 
   gzip-size@6.0.0:
     resolution: {integrity: sha512-ax7ZYomf6jqPTQ4+XCpUGyXKHk5WweS+e05MBO4/y3WJ5RkmPXNKvX+bx1behVILVwr6JSQvZAku021CHPXG3Q==}
@@ -5836,6 +5848,8 @@ snapshots:
       define-properties: 1.2.1
       gopd: 1.2.0
 
+  glsl-blend@1.0.3: {}
+
   glsl-inject-defines@1.0.3:
     dependencies:
       glsl-token-inject-block: 1.1.0
@@ -5934,6 +5948,8 @@ snapshots:
   graceful-fs@4.2.11: {}
 
   graphemer@1.4.0: {}
+
+  gsap@3.14.2: {}
 
   gzip-size@6.0.0:
     dependencies:
