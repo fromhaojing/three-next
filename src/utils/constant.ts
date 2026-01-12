@@ -5,6 +5,7 @@ export const PATH = {
   PRIVATERESIDENCE: '/private-residence',
   ROOM: '/room',
   INTERIORLIGHTING: '/interior-lighting',
+  MOUNTAINWATER: '/mountain-water',
 }
 
 export const colorsDefault: ColorMapString = {
