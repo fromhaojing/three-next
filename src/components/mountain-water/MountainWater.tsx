@@ -1,15 +1,39 @@
 'use client'
-import { Sky } from '@react-three/drei'
-import { TerrainShader } from './Shader'
+import { useMemo } from 'react'
+import { Environment } from '@react-three/drei'
+import { TerrainShader, DepthMaterial } from './Shader'
+import * as THREE from 'three'
 
 const MountainWater = () => {
+  const terrainGeometry = useMemo(() => {
+    const g = new THREE.PlaneGeometry(10, 10, 500, 500)
+    g.rotateX(-Math.PI / 2)
+    g.deleteAttribute('normal')
+    g.deleteAttribute('uv')
+    return g
+  }, [])
+
   return (
     <>
-      <ambientLight intensity={1} />
-      <Sky distance={450000} sunPosition={[100, 20, 100]} mieCoefficient={0.005} mieDirectionalG={0.8} />
-      <mesh rotation-x={-Math.PI / 2}>
-        <planeGeometry args={[10, 10, 500, 500]} />
-        <TerrainShader />
+      <Environment files='/mountain-water/spruit_sunrise.hdr' background backgroundBlurriness={0.5} />
+      <directionalLight
+        color='#ffffff'
+        castShadow
+        intensity={2}
+        position={[6.25, 3, 4]}
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+        shadow-camera-near={0.1}
+        shadow-camera-far={30}
+        shadow-camera-left={-8}
+        shadow-camera-right={8}
+        shadow-camera-top={8}
+        shadow-camera-bottom={-8}
+      />
+      <mesh castShadow receiveShadow>
+        <primitive object={terrainGeometry} attach='geometry' />
+        <TerrainShader attach='material' />
+        <DepthMaterial attach='customDepthMaterial' />
       </mesh>
     </>
   )

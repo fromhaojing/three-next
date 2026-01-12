@@ -1,1 +1,1 @@
-export { default as TerrainShader } from './terrain'
+export { TerrainShader, DepthMaterial } from './terrain'
