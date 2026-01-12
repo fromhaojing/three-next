@@ -1,6 +1,6 @@
 'use client'
 
-import { View } from '@/components/canvas/View'
+import { View } from '@/common/canvas/View'
 import { InfiniteOllision } from '@/components/infinite-ollision'
 import { useMode } from '@/store/useMode'
 import { Leva } from 'leva'

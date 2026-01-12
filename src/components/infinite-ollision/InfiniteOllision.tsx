@@ -1,5 +1,6 @@
 'use client'
-import { Floor, FullscreenQuad, Assets, Intro, Crossroads } from '.'
+import { Floor, Assets, Intro, Crossroads } from '.'
+import FullscreenQuad from "@/common/FullScreenQuad";
 import { Physics } from '@react-three/rapier'
 
 const InfiniteOllision = () => {

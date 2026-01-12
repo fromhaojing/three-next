@@ -7,7 +7,7 @@ export default function Page() {
   const router = useRouter()
 
   useEffect(() => {
-    router.replace(PATH.ROOM)
+    router.replace(PATH.INTERIORLIGHTING)
   }, [router])
 
   return <div>Redirecting to organic page...</div>

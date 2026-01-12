@@ -1,6 +1,5 @@
 export { default as InfiniteOllision } from './InfiniteOllision'
 export { default as Assets } from './Assets'
-export { default as FullscreenQuad } from './FullscreenQuad'
 export { default as Floor } from './Floor'
 export { default as Intro } from './Intro'
 export { default as Crossroads } from './Crossroads'
