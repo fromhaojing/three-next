@@ -8,7 +8,6 @@ export default function Scene({ ...props }) {
   return (
     <>
       <Canvas className='pointer-events-auto' {...props} dpr={[1, 2]} camera={{ position: [-10, 6, -2] }} shadows>
-        <axesHelper args={[5]} />
         <r3f.Out />
         <Preload all />
       </Canvas>

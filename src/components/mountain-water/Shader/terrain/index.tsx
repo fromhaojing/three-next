@@ -17,6 +17,12 @@ const useTerrainUniforms = () => {
       uStrength: { value: 2.0, min: 0, max: 10, step: 0.001 },
       uWarpFrequency: { value: 5.0, min: 0, max: 10, step: 0.001 },
       uWarpStrength: { value: 0.5, min: 0, max: 1, step: 0.001 },
+      uColorWaterDeep: '#002b3d',
+      uColorWaterSurface: '#66a8ff',
+      uColorSand: '#ffe894',
+      uColorGrass: '#85d534',
+      uColorSnow: '#ffffff',
+      uColorRock: '#bfbd8d',
     }),
   })
 
@@ -27,13 +33,19 @@ const useTerrainUniforms = () => {
       uWarpFrequency: { value: controls.uWarpFrequency },
       uWarpStrength: { value: controls.uWarpStrength },
       uTime: { value: 0 },
+      uColorWaterDeep: { value: new THREE.Color(controls.uColorWaterDeep) },
+      uColorWaterSurface: { value: new THREE.Color(controls.uColorWaterSurface) },
+      uColorSand: { value: new THREE.Color(controls.uColorSand) },
+      uColorGrass: { value: new THREE.Color(controls.uColorGrass) },
+      uColorSnow: { value: new THREE.Color(controls.uColorSnow) },
+      uColorRock: { value: new THREE.Color(controls.uColorRock) },
     }),
     [controls.uPositionFrequency, controls.uStrength, controls.uWarpFrequency, controls.uWarpStrength],
   )
 
-  useFrame((state) => {
-    uniforms.uTime.value = state.clock.getElapsedTime()
-  })
+  // useFrame((state) => {
+  //   uniforms.uTime.value = state.clock.getElapsedTime()
+  // })
 
   return uniforms
 }
@@ -49,7 +61,6 @@ const createMaterial = (baseMaterial: typeof THREE.Material, uniforms: any, extr
 
 export const TerrainShader: React.FC<IProps> = ({ attach }) => {
   const uniforms = useTerrainUniforms()
-
   const material = useMemo(
     () =>
       createMaterial(THREE.MeshStandardMaterial, uniforms, {

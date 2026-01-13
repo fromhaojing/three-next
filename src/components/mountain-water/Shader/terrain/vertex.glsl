@@ -4,7 +4,8 @@ uniform float uWarpFrequency;
 uniform float uWarpStrength;
 uniform float uTime;
 
-varying vec2 vUv;
+varying vec3 vPosition;
+varying float vUpDot;
 
 vec3 permute(vec3 x) {
   return mod(((x * 44.0) + 1.0) * x, 299.0);
@@ -40,7 +41,7 @@ float getElevation(vec2 position) {
   float elevation = 0.0;
 
   vec2 warpedPosition = position;
-  warpedPosition += uTime / 2.0;
+  warpedPosition += uTime * 0.2;
   warpedPosition += simplexNoise2d(warpedPosition * uPositionFrequency * uWarpFrequency) * uWarpStrength;
 
   elevation += simplexNoise2d(warpedPosition * uPositionFrequency) / 2.0;
@@ -53,7 +54,6 @@ float getElevation(vec2 position) {
 }
 
 void main() {
-
   float shift = 0.01;
   vec3 positionA = position.xyz + vec3(shift, 0.0, 0.0);
   vec3 positionB = position.xyz + vec3(0.0, 0.0, -shift);
@@ -67,4 +67,7 @@ void main() {
   vec3 toB = normalize(positionB - csm_Position);
   csm_Normal = cross(toA, toB);
 
+  vPosition = csm_Position;
+  vPosition.xz += uTime * 0.2;
+  vUpDot = dot(csm_Normal, vec3(0.0, 1.0, 0.0));
 }
