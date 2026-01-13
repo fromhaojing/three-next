@@ -38,6 +38,7 @@
     "@strudel/core": "^1.2.5",
     "@strudel/web": "^1.2.6",
     "clsx": "^2.1.1",
+    "glsl-noise": "^0.0.0",
     "glsl-random": "^0.0.5",
     "gsap": "^3.14.2",
     "leva": "^0.10.1",

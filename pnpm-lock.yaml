@@ -41,6 +41,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      glsl-noise:
+        specifier: ^0.0.0
+        version: 0.0.0
       glsl-random:
         specifier: ^0.0.5
         version: 0.0.5
